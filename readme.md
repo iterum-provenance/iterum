@@ -58,6 +58,7 @@ As the name implies, the individual pieces of data in the stream are called *Fra
 
 The communication between the different transformation steps is achieved with a message queing system. However, these systems do not handle large messages well. Therefore the fragments in Iterum are split into metadata and data itself. The metadata, or FragmentDescription, is still send via the message queing system(RabbitMQ), whereas the data itself is stored on distributed storage (MinIO). The FragmentDescriptions then simply hold a reference to the data stored on MinIO. These considerations are explained in more detail in the respective theses.
 
+For the implementation it is important to know that the FragmentDescriptions take two forms: A LocalFragmentDescription, which lives within the scope of one transformation step. It has a reference to file(s) on the local harddisk. When communicating Fragments between the transformation steps, RemoteFragmentDescriptions are used, which contain a reference to a MinIO bucket rather than a local harddisk.
 
 ## Repository overview
 Iterum consists of a couple of different repositories. These repositories contain the source code for the Iterum framework itself:
@@ -87,9 +88,6 @@ Some auxilliary repositories, supporting Iterum:
     One of the client libraries implemented for Python.
 * [Demo pipeline](https://github.com/iterum-provenance/demo)
     Contains a demonstration pipeline, which functions as an example of how a user can use Iterum. This pipeline detects the eyes of cats in images using edge detection and Hough transforms.
-
-
-
 
 
 ## References
