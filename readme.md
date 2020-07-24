@@ -49,6 +49,16 @@ Iterum provides sidecars which communicate with these user-provided components:
 * [Sidecar](https://github.com/iterum-provenance/sidecar)
 * [Combiner](https://github.com/iterum-provenance/combiner)
 
+## Important concepts which are used in Iterum
+
+Iterum is versions datasets, and is then able to use these datasets as input data for a pipeline. Iterum processes these datasets as a stream rather than a batch. This means that the batch needs to be turned into a stream before it can be processed, and back into a batch after the data is processed. For this, Iterum introduces the *Fragmenter* and the *Combiner*. These are located at the start and end of pipelines as shown in the following image:
+![fragmenter-combiner](images/stream.png)
+
+As the name implies, the individual pieces of data in the stream are called *Fragments* in Iterum. These encapsulate the data, adding a layer of abstraction. The transformation steps in a pipeline therefore process a stream of fragments. This is the idea of bounded stream processing.
+
+The communication between the different transformation steps is achieved with a message queing system. However, these systems do not handle large messages well. Therefore the fragments in Iterum are split into metadata and data itself. The metadata, or FragmentDescription, is still send via the message queing system(RabbitMQ), whereas the data itself is stored on distributed storage (MinIO). The FragmentDescriptions then simply hold a reference to the data stored on MinIO. These considerations are explained in more detail in the respective theses.
+
+
 ## Repository overview
 Iterum consists of a couple of different repositories. These repositories contain the source code for the Iterum framework itself:
 * [Daemon](https://github.com/iterum-provenance/daemon)
