@@ -14,7 +14,7 @@ Iterum consists of a couple of different features, most notably:
 This repository gives a short overview of the architecture of the framework, and how this architecture maps to repositories/source code.
 
 ## Quick overview of the architecture
-The architecture of iterum has a infrastructural part, but also some components which are only active during a pipeline. The names of the software artifacts link to their respective repository. The general idea of how these components function is described in their respective repository readmes. The concepts on how these components interact is described in more greater detail in [[1]](#1) and [[2]](#1).
+The architecture of iterum has a infrastructural part, but also some components which are only active during a pipeline. The names of the software artifacts link to their respective repository. The general idea of how these components function is described in their respective repository readmes. How these components interact is described in greater detail in [[1]](#1) and [[2]](#1).
 
 ### Infrastructural components
 The following image shows the infrastructural components of the framework:
@@ -69,7 +69,7 @@ Some auxilliary repositories, supporting Iterum:
 * [Demo pipeline](https://github.com/iterum-provenance/demo)
     Contains a demonstration pipeline, which functions as an example of how a user can use Iterum. This pipeline detects the eyes of cats in images using edge detection and Hough transforms.
 
-    
+
 
 
 
