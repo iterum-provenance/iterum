@@ -13,6 +13,15 @@ Iterum consists of a couple of different features, most notably:
 
 This repository gives a short overview of the architecture of the framework, and how this architecture maps to repositories/source code.
 
+## Quick start
+### 1. Set up the Iterum cluster
+Follow the instructions in the [cluster setup](https://github.com/iterum-provenance/cluster) repository.
+### 2. Install the CLI
+Follow the instructions in the [CLI](https://github.com/iterum-provenance/cli) repository.
+### 3. Run the demo pipeline
+Follow the instructions in the [demo pipeline](https://github.com/iterum-provenance/demo) repository.
+
+
 ## Quick overview of the architecture
 The architecture of iterum has a infrastructural part, but also some components which are only active during a pipeline. The names of the software artifacts link to their respective repository. The general idea of how these components function is described in their respective repository readmes. How these components interact is described in greater detail in [[1]](#1) and [[2]](#1).
 
@@ -60,7 +69,7 @@ Iterum consists of a couple of different repositories. These repositories contai
     Implemented user interface to interact with the different software artifacts present in Iterum
 
 Some auxilliary repositories, supporting Iterum:
-* [Cluster set up](https://github.com/iterum-provenance/cluster)
+* [Cluster setup](https://github.com/iterum-provenance/cluster)
     Contains Kubernetes deployment files which help the user to set up Iterum on a Kubernetes cluster
 * [Libraries](https://github.com/iterum-provenance/libraries)
     Overarching repository containing client libraries which help users to create their transformation steps and fragmenters.
