@@ -11,7 +11,7 @@ Iterum consists of a couple of different features, most notably:
 * Be agnostic towards the experiment
 * Automate as many things for the user as possible
 
-This repository gives a short overview of the architecture of the framework, and how this architecture maps to repositories/source code.
+This repository gives a short overview of the architecture of the framework, and how this architecture maps to repositories/source code. Note that this framework, and its software artifacts are still in an early-alpha phase.
 
 ## Quick start
 ### 1. Set up the Iterum cluster
